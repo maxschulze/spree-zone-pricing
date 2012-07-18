@@ -21,7 +21,7 @@ the "Ship To" address. Prices of items in the cart will be changed to reflect th
 
 ### Gemfile
 
-	gem "spree_zone_pricing", "~> 0.1.0"
+	gem "spree_zone_pricing", "~> 0.1.1"
 
 ### Run migration
 

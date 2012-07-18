@@ -24,33 +24,33 @@ the "Ship To" address. Prices of items in the cart will be changed to reflect th
 Run the DB migration to add a new table to store the prices for each zone and product variant.
 
 
-class CreateZonePricesTable < ActiveRecord::Migration
+		class CreateZonePricesTable < ActiveRecord::Migration
 
-  def self.up
+		  def self.up
 
-    create_table :zone_prices do |t|
+		    create_table :zone_prices do |t|
 
-      t.references :variant
-      t.references :zone
-      t.decimal :price, :precision => 8, :scale => 2
-      t.timestamps
+		      t.references :variant
+		      t.references :zone
+		      t.decimal :price, :precision => 8, :scale => 2
+		      t.timestamps
 
-    end
-    
-    add_index :zone_prices, :variant_id
-    add_index :zone_prices, :zone_id
+		    end
+		    
+		    add_index :zone_prices, :variant_id
+		    add_index :zone_prices, :zone_id
 
-  end
+		  end
 
-  def self.down
+		  def self.down
 
-    remove_index :zone_prices, :variant_id
-    remove_index :zone_prices, :zone_id
-    drop_table :zone_prices
+		    remove_index :zone_prices, :variant_id
+		    remove_index :zone_prices, :zone_id
+		    drop_table :zone_prices
 
-  end
+		  end
 
-end
+		end
 
 
 ### Set the default country

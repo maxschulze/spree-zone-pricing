@@ -23,6 +23,25 @@ the "Ship To" address. Prices of items in the cart will be changed to reflect th
 
 Run the DB migration to add a new table to store the prices for each zone and product variant.
 
+class CreateZonePricesTable < ActiveRecord::Migration
+  def self.up
+    create_table :zone_prices do |t|
+      t.references :variant
+      t.references :zone
+      t.decimal :price, :precision => 8, :scale => 2
+      t.timestamps
+    end
+    add_index :zone_prices, :variant_id
+    add_index :zone_prices, :zone_id
+  end
+
+  def self.down
+    remove_index :zone_prices, :variant_id
+    remove_index :zone_prices, :zone_id
+    drop_table :zone_prices
+  end
+end
+
 ### Set the default country
 
 Set the default country that will be used for guest customers by setting the "default_country_id" Spree
@@ -31,7 +50,5 @@ config item, i.e.
 Spree::Config.set(:default_country_id => Country.find_by_name("Australia")
 
 ## TODO list
-
-Tests
 
 

@@ -1,4 +1,5 @@
 class ZonePrice < ActiveRecord::Base
+	
   belongs_to :zone
   belongs_to :variant
 

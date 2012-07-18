@@ -1,10 +1,8 @@
-# Uncomment this if you reference any of your controllers in activate
-# require_dependency 'application'
-
 class ZonePricingExtension < Spree::Extension
-  version "1.0"
-  description "Allows prices to be set by zone"
-  url "http://yourwebsite.com/zone_pricing"
+
+  version "0.1.7"
+  description "Spree Zone Pricing"
+  url "https://github.com/henriquebf/spree-zone-pricing"
 
   # Please use zone_pricing/config/routes.rb instead for extension routes.
 
@@ -41,4 +39,5 @@ class ZonePricingExtension < Spree::Extension
     CheckoutsController.send(:include, Spree::ZonePricing::CheckoutsController)
 
   end
+
 end

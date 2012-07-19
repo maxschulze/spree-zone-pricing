@@ -8,6 +8,8 @@ module SpreeZonePricing
     config.autoload_paths += %W(#{config.root}/lib)
 
     def self.activate
+
+=begin
   
       # Add helper to retrieve the users country
       ApplicationHelper.send(:include, Spree::ZonePricing::GetCountry)
@@ -34,6 +36,8 @@ module SpreeZonePricing
       # Add code to check zone prices after address is saved during checkout, if ship
       # country not the same change prices in order
       CheckoutsController.send(:include, Spree::ZonePricing::CheckoutsController)
+
+=end
 
     end
 

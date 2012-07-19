@@ -1,0 +1,16 @@
+<!-- insert_after 'p[data-hook=price]' -->
+<p data-hook="zone_prices">
+<label for="zone_prices">Zone Prices:</label>
+<% zones = Spree::Zone.all %>
+<% zones.each do |zone| %>
+	<% zone_price = ZonePrice.find(:first, :conditions => {:variant_id => @variant.id, :zone_id => zone.id}) %>
+	<p>
+		<%= zone.name %>:<br />
+		<% if !zone_price.nil? %>
+			<%= text_field_tag "zone_price_" + @variant.id.to_s + "_" + zone.id.to_s, number_with_precision(zone_price.price, :precision => 2) %>
+		<% else %>
+			<%= text_field_tag "zone_price_" + @variant.id.to_s + "_" + zone.id.to_s, "" %>
+		<% end %>
+	</p>
+<% end %>
+</p>

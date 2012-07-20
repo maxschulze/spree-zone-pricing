@@ -1,2 +1,0 @@
-<!-- insert_bottom 'ul' -->
-<%= tab :zone_prices %>

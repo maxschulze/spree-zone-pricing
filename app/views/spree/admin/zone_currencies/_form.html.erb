@@ -1,0 +1,46 @@
+<%= nested_form_for @zone_currency, :url => @form_target, :method => @form_method do |f| %>
+
+  <% if @zone_currency.errors.any? %>
+  <div class="alert-message block-message error">
+    <p><strong><%= pluralize(@zone_currency.errors.count, "error") %></strong> prohibited this form from being saved:</p>
+    <ul>
+      <% @zone_currency.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <fieldset data-hook="new_zone_currency">
+
+    <div class="clearfix" data-hook="new_zone_currency_attrs">
+
+      <div class="left">
+
+        <%
+        zone = Spree::Zone.find(zone_currency.zone_id)
+        %>
+        <%= f.hidden_field :zone_id %>
+        <h1>Edit Currency for <%= zone.name %></h1><br /><br />
+
+        <%= f.field_container :currency do %>
+          <%= f.label :currency %> <span class="required">*</span><br />
+          <%= f.text_field :currency %>
+          <%= f.error_message_on :currency %>
+        <% end %>
+
+      </div>
+
+      <div class="right">
+
+      </div>
+
+    </div>
+    
+    <div class="actions">
+      <%= f.submit :class => "btn primary" %>
+    </div>
+
+  </fieldset>
+
+<% end %>

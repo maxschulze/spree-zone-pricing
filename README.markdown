@@ -21,29 +21,39 @@ the "Ship To" address. Prices of items in the cart will be changed to reflect th
 
 ### Gemfile
 
-	gem "spree_zone_pricing", "~> 0.1.35"
+	gem "spree_zone_pricing", "~> 0.1.69"
 
 ### Run the DB migration to add a new table to store the prices for each zone and product variant.
 
-	rails g migration CreateZonePricesTable
+	rails g migration CreateZoneCurrenciesTable
 
 Paste content below in generated migration file
 
-	class CreateZonePricesTable < ActiveRecord::Migration
+	class CreateZoneCurrenciesTable < ActiveRecord::Migration
 	  def self.up
 	    create_table :zone_prices do |t|
 	      t.references :variant
-	      t.references :zone
+	      t.string :currency
 	      t.decimal :price, :precision => 8, :scale => 2
 	      t.timestamps
 	    end
+	    create_table :zone_currencies do |t|
+	      t.references :zone
+	      t.string :currency
+	      t.timestamps
+	    end
 	    add_index :zone_prices, :variant_id
-	    add_index :zone_prices, :zone_id
+	    add_index :zone_prices, :currency
+	    add_index :zone_currencies, :zone_id
+	    add_index :zone_currencies, :currency
 	  end
 	  def self.down
 	    remove_index :zone_prices, :variant_id
-	    remove_index :zone_prices, :zone_id
+	    remove_index :zone_prices, :currency
+	    remove_index :zone_currencies, :zone_id
+	    remove_index :zone_currencies, :currency
 	    drop_table :zone_prices
+	    drop_table :zone_currencies
 	  end
 	end
 
@@ -61,5 +71,6 @@ config item, i.e.
 ## TODO list
 
 Zone Pricing fields within Product Variants are not updated when form is submitted.
+Implement Testing
 
 

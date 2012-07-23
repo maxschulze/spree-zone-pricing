@@ -1,2 +1,2 @@
 <!-- insert_bottom 'ul[data-hook=admin_tabs]' -->
-<%= tab :zone_prices %>
+<%= tab :zone_currencies, :currency_prices, :label => "Zone Currencies" %>

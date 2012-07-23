@@ -1,0 +1,33 @@
+<h1>Listing Zone Currencies</h1>
+
+<table class="index" id="listing_orders" data-hook>
+  <thead>
+    <tr data-hook="admin_orders_index_headers">
+      <th><%= t(:zones) %></th>
+      <th><%= t(:currency) %></th>
+      <th data-hook="admin_zone_currencies_index_header_actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @zone_currencies.each do |zone_currency| %>
+    <tr data-hook="admin_zone_currencies_index_rows">
+      <%
+      zone = Spree::Zone.find(zone_currency.zone_id)
+      %>
+      <td><%= link_to zone.name, edit_admin_zone_currency_path(zone_currency) %></td>
+      <td><%= zone_currency.currency %></td>
+      <td class='actions' data-hook="admin_zone_currencies_index_row_actions">
+        <%= link_to_edit_url edit_admin_zone_currency_path(zone_currency), :title => "admin_edit_#{dom_id(zone_currency)}" %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @zone_currencies %>
+
+<% content_for :sidebar do %>
+  <%= 
+  #render :partial => 'spree/admin/shared/sidebar_zone_currencies', :locals => { :selected => "zone_currencies" }
+  %>
+<% end %>

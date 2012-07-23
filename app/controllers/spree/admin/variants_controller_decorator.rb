@@ -6,30 +6,7 @@ Spree::Admin::VariantsController.class_eval do
 
 		def update_zone_prices
 
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>"
-			Rails.logger.info "<<<<<<<<<<<<<<<<<<<<<<"
+			#Here should update the zone/currency prices
 
 		end
 	

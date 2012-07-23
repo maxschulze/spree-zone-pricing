@@ -1,0 +1,15 @@
+<div data-hook="admin_zone_currency_edit_header">
+<%
+=begin
+%>
+  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+<%
+=end
+%>
+</div>
+
+<div data-hook="admin_zone_currency_edit_form">
+  <div id="event_sticky-form-wrapper">
+    <%= render :partial => 'form', :locals => { :zone_currency => @zone_currency } %>
+  </div>
+</div>

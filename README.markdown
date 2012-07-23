@@ -61,13 +61,6 @@ Run rake command to update database
 
 	rake db:migrate
 
-### Set the default country
-
-Set the default country that will be used for guest customers by setting the "default_country_id" Spree
-config item, i.e.
-
-	Spree::Config.set(:default_country_id => Country.find_by_name("Australia")
-
 ## TODO list
 
 Zone Pricing fields within Product Variants are not updated when form is submitted.

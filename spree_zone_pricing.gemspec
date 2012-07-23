@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'spree_zone_pricing'
-  s.version     = '0.1.69'
+  s.version     = '0.1.70'
   s.date        = '2012-07-19'
   s.summary     = "Spree Zone Pricing"
   s.description = "Zone Pricing is an extension to Spree that uses the predefined zones to determine the price for a particular product variant. For example, this allows you to set different prices for the North American and Euro zones."
@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
   s.files      += Dir['db/*']
   #s.files      += Dir['db/migrate/*']
   s.files      += Dir['lib/*']
-  s.files      += Dir['lib/spree/zone_pricing/*']
-  s.files      += Dir['lib/spree/zone_pricing/admin/*']
-  s.files      += Dir['lib/tasks/*']
-  s.files      += Dir['spec/*']
+  #s.files      += Dir['lib/spree/zone_pricing/*']
+  #s.files      += Dir['lib/spree/zone_pricing/admin/*']
+  #s.files      += Dir['lib/tasks/*']
+  #s.files      += Dir['spec/*']
   s.require_path = 'lib'
   s.homepage    =
     'https://github.com/henriquebf/spree-zone-pricing'

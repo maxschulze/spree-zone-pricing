@@ -1,3 +1,8 @@
+# NOTE
+
+I couldn't get this to work in 2.2. I tried but unfortunetly didn't have the time to proceed my bugfixing.
+Please do not use this repository it will break your store.
+
 # Zone Pricing
 
 Zone Pricing is an extension to Spree that uses the predefined zones to determine the price for a particular

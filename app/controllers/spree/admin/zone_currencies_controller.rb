@@ -1,3 +1,6 @@
+require 'spree/zone_currency'
+require 'spree/currency_price'
+
 class Spree::Admin::ZoneCurrenciesController < Spree::Admin::BaseController 
 
 	def index

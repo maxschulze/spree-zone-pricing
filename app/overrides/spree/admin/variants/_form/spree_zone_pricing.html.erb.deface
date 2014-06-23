@@ -1,7 +1,7 @@
 <!-- insert_after 'div[data-hook=price]' -->
 <div class="field" data-hook="zone_prices">
 <label for="zone_prices">Zone Prices:</label>
-<% currency_prices = CurrencyPrice.find(:all, :conditions => {:variant_id => @variant.id}) %>
+<% currency_prices = Spree::CurrencyPrice.find(:all, :conditions => {:variant_id => @variant.id}) %>
 <% currency_prices.each do |currency_price| %>
 	<p>
 		<%= currency_price.currency %>:<br />

@@ -1,4 +1,5 @@
-class ZoneCurrency < ActiveRecord::Base
+class Spree::ZoneCurrency < ActiveRecord::Base
+	self.table_name = 'zone_currencies'
 	
 	validates_presence_of :zone_id
 	validates_presence_of :currency

@@ -21,11 +21,11 @@ the "Ship To" address. Prices of items in the cart will be changed to reflect th
 
 ### Gemfile
 
-	gem "spree_zone_pricing", "~> 0.1.69"
+	gem "spree_zone_pricing", "~> 0.1.70"
 
 ### Run the DB migration to add a new table to store the prices for each zone and product variant.
 
-	rails g migration CreateZoneCurrenciesTable
+	rails g migration CreateCurrencyPricesTable
 
 Paste content below in generated migration file
 

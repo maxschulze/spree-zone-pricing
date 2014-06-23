@@ -25,7 +25,8 @@ the "Ship To" address. Prices of items in the cart will be changed to reflect th
 
 Run rake command to update database
 
-	rake db:migrate
+	bundle exec rake railties:install:migrations
+	bundle exec rake db:migrate
 
 ## TODO list
 

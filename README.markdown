@@ -29,9 +29,9 @@ the "Ship To" address. Prices of items in the cart will be changed to reflect th
 
 Paste content below in generated migration file
 
-	class CreateZoneCurrenciesTable < ActiveRecord::Migration
+	class CreateCurrencyPricesTable < ActiveRecord::Migration
 	  def self.up
-	    create_table :zone_prices do |t|
+	    create_table :currency_prices do |t|
 	      t.references :variant
 	      t.string :currency
 	      t.decimal :price, :precision => 8, :scale => 2
@@ -42,17 +42,17 @@ Paste content below in generated migration file
 	      t.string :currency
 	      t.timestamps
 	    end
-	    add_index :zone_prices, :variant_id
-	    add_index :zone_prices, :currency
+	    add_index :currency_prices, :variant_id
+	    add_index :currency_prices, :currency
 	    add_index :zone_currencies, :zone_id
 	    add_index :zone_currencies, :currency
 	  end
 	  def self.down
-	    remove_index :zone_prices, :variant_id
-	    remove_index :zone_prices, :currency
+	    remove_index :currency_prices, :variant_id
+	    remove_index :currency_prices, :currency
 	    remove_index :zone_currencies, :zone_id
 	    remove_index :zone_currencies, :currency
-	    drop_table :zone_prices
+	    drop_table :currency_prices
 	    drop_table :zone_currencies
 	  end
 	end
